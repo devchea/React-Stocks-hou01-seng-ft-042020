@@ -1,15 +1,24 @@
 import React from 'react'
 
-const Stock = () => (
+const Stock = (props) => (
+
   <div>
 
-    <div className="card">
+    <div className="card" onClick={() => 
+      props.stockAction(props)
+    // //checking to see which container created stock
+    //   props.addToPortfolio
+    //   ? props.addToPortfolio(props)
+    //   : props.removeFromPortfolio(props)
+      // stockAction={this.props.action}
+      
+      }>
       <div className="card-body">
         <h5 className="card-title">{
-            //Company Name
+          props.name
           }</h5>
         <p className="card-text">{
-            //ticker: stock price
+            `${props.ticker}: $${props.price}`
           }</p>
       </div>
     </div>
